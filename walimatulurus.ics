@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//MAJLIS BERTAUT KASIH FAZLIANA & FIQRIE//Event Calendar//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:wedding-fazliana-fiqrie-20251227@walimah
+DTSTAMP:20251011T000000Z
+DTSTART:20251227T020000Z
+DTEND:20251227T070000Z
+SUMMARY:MAJLIS BERTAUT KASIH FAZLIANA & FIQRIE
+DESCRIPTION:Majlis Bertaut Kasih antara Fazliana & Fiqrie. Datanglah memeriahkan hari bahagia kami di PPKK Kampung Lok Urai, Pulau Gaya, Kota Kinabalu, Sabah.
+LOCATION:PPKK Kampung Lok Urai, Pulau Gaya, Kota Kinabalu, Sabah
+END:VEVENT
+END:VCALENDAR
+

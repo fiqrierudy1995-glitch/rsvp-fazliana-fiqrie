@@ -1,0 +1,1221 @@
+/* ===========================
+   🎨 Fonts
+=========================== */
+@font-face {
+  font-family: "Imperial";
+  src: url("../fonts/Imperial.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Holla";
+  src: url("../fonts/Holla.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ===========================
+   🌿 Global Styles
+=========================== */
+:root {
+  --navbar-height: 80px;
+  --popup-width: 368px;
+  --popup-height: 180px;
+}
+
+body {
+  font-family: "Fahkwang", sans-serif;
+  color: #434634;
+  font-size: 14px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #f8f8f8;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* 🌸 Global <h3> Style */
+h3 {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 16px;
+  font-weight: 400; /* try 300 for lighter look */
+  color: #434634;
+  letter-spacing: 0.3px;
+  margin: 8px 0;
+}
+
+h2 {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #434634;
+  letter-spacing: 0.3px;
+  margin: 8px 0;
+}
+
+
+/* Prevent horizontal scroll */
+.mobile-frame,
+.scroll-container,
+.content,
+.page2 {
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+/* ===========================
+   🎭 Curtains
+=========================== */
+.curtain {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(255, 255, 255, 0.99) 100%);
+  transform-style: preserve-3d;
+  transition: all 4s ease-in-out;
+  z-index: 2000;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+.left-curtain {
+  left: 0;
+  transform-origin: left;
+  border-right: 3px solid #fff;
+  box-shadow: 5px 0 20px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.right-curtain {
+  right: 0;
+  transform-origin: right;
+  border-left: 3px solid #fff;
+  box-shadow: -5px 0 20px rgba(0, 0, 0, 0.25);
+  z-index: 9;
+}
+
+.open .left-curtain {
+  transform: rotateY(-100deg);
+}
+.open .right-curtain {
+  transform: rotateY(100deg);
+}
+
+/* ===========================
+   🌸 Logo
+=========================== */
+.logo {
+  width: 200px;
+  height: 200px;
+  background: url('https://i.ibb.co/602srx0L/f-200-x-200-px-3.png') no-repeat center / contain;
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  animation: pulseZoom 2s ease-in-out infinite;
+  z-index: 11;
+}
+
+@keyframes pulseZoom {
+  0%, 100% { transform: translateY(-50%) scale(1); }
+  50% { transform: translateY(-50%) scale(1.05); }
+}
+
+/* ===========================
+   ❄️ Snowflakes
+=========================== */
+.snowflake-wrapper {
+  position: absolute;
+  top: -10px;
+  animation: drift ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.snowflake {
+  background-color: floralwhite;
+  border-radius: 50%;
+  opacity: 0.9;
+  animation: fall linear infinite, twinkle ease-in-out infinite;
+}
+
+@keyframes fall {
+  to { transform: translateY(900px); }
+}
+@keyframes drift {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(30px); }
+  100% { transform: translateX(-30px); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+}
+
+/* ===========================
+   📱 Mobile Frame
+=========================== */
+.mobile-frame {
+  width: 100%;
+  max-width: 430px;
+  height: 844px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  
+}
+
+/* Scrollable Container */
+.scroll-container {
+  width: 100%;
+  max-width: 430px;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: hidden;
+  display: block;
+  padding-bottom: 300px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  background-image: url('images/bg.png');
+  background-size: contain;   /* make sure image fits */
+  background-repeat: no-repeat;
+  background-position: top center;
+  }
+
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===========================
+   🖼️ Page 1
+=========================== */
+.content {
+  flex: 0 0 844px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.content img {
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   🌸 INVITATION SECTION
+=========================== */
+.invitation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  
+}
+
+.arabic-text {
+  font-family: "Almarai", sans-serif;
+  font-size: 36px;
+  font-weight: 300;
+  color: #434634;
+  margin: 25px 0 13px;
+  text-align: center;
+  transform: scaleX(1.3);
+}
+
+
+.parents-group {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.parent1-text,
+.parent3-text {
+  margin: 0;
+  font-weight: 400;
+    font-size: 16px;
+
+}
+
+.parent2-text {
+  margin: 2px 0;
+  font-weight: 400;
+    font-size: 16px;
+
+}
+
+.aluan-text {
+  max-width: 310px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 13px auto;
+}
+
+/* 💑 Couple Text Styles */
+.couple-text {
+  text-align: center;
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+/* Groom Name Style */
+.couple-text .groom-text {
+  font-family: "Holla", cursive;
+  font-size: 26px;
+  font-weight: 200;
+  color: #bf9042;
+  letter-spacing: 1px;
+  margin: 0 0 18px;
+  transition: transform 0.3s ease;
+}
+
+.couple-text .groom-text:hover {
+  transform: scale(1.05);
+}
+
+/* "And" Text Style */
+.couple-text .and-text {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* Bride Name Style */
+.couple-text .bride-text {
+  font-family: "Holla", cursive;
+  font-size: 26px;
+  font-weight: 400;
+  color: #bf9042;
+  letter-spacing: 1px;
+  margin: 24px 0px 0px;
+  transition: transform 0.3s ease;
+}
+
+.couple-text .bride-text:hover {
+  transform: scale(1.05);
+}
+
+/* Venue, Date & Time */
+
+.tempat-text,
+.date-text,
+.hour-text {
+  text-align: center;
+  font-weight: 400;
+  margin-bottom: 0;
+    font-size: 16px;
+
+}
+
+.tempat1-text,
+.date1-text,
+.hour1-text {
+  text-align: center;
+  margin: 0 0 4px;
+    color: #555;
+
+}
+
+.ballroom-name {
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+
+/* ===========================
+   🌸 PAGE 3 - PROGRAMME
+=========================== */
+.page3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+}
+
+/* 📜 Programme Section */
+.programme-section {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 350px;
+}
+
+/* 📦 Programme Box */
+.box-text {
+  position: relative;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  width: 300px;
+  max-height: 420px;
+  padding: 30px 24px;
+  margin: 0 auto;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.box-text::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* Hover animasi kotak */
+.box-text:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Tajuk Utama */
+.box-text h3 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0 0 25px;
+  color: #434634;
+  text-transform: uppercase;
+}
+
+/* Waktu acara */
+.box-text h4 {
+  margin: 12px 0 4px;
+  font-weight: 400;
+  color: #434634;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Keterangan acara */
+.box-text p {
+  margin: 0 0 18px;
+  line-height: 1.5;
+  color: #555;
+  transition: all 0.25s ease-in-out;
+}
+
+/* ✨ Hover effect untuk masa & aktiviti */
+#atur h4:hover,
+#atur p:hover {
+  color: #524b34;
+  transform: scale(1.03);
+}
+
+/* 🌿 Responsive: telefon & tablet */
+@media (max-width: 768px) {
+  .box-text {
+    width: 90%;
+    padding: 24px 20px;
+    max-height: none;
+  }
+
+  .box-text h3 {
+    font-size: 15px;
+  }
+
+  .box-text h4 {
+    font-size: 14px;
+  }
+
+}
+/* ===========================
+   🤲 PRAYER SECTION
+=========================== */
+.doa-box {
+  max-width: 800px;     /* tetapkan lebar maksimum */
+  margin: 0 auto;       /* center-kan kotak di tengah skrin */
+  padding-left: 40px;   /* ruang kiri */
+  padding-right: 40px;  /* ruang kanan */
+}
+
+.doa-text {
+  text-align: center;       /* semua teks center secara horizontal */
+}
+
+.doa-text h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: "Almarai", sans-serif;
+  font-size: 42px;
+}
+
+.doa-text p {
+  text-align: center;      /* justifikasi teks */
+  text-justify: inter-word;
+  line-height: 1.6;
+  margin: 0 auto;           /* center-kan block dengan max-width */
+  max-width: 600px;
+  font-size: 14px;
+    color: #555;
+
+}
+
+/* ===========================
+   ⏳ COUNTDOWN SECTION
+=========================== */
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.countdown h2 {
+  font-weight: 400;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  font-family: "Fahkwang", sans-serif;
+}
+
+#countdown-timer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 25px 0 20px;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 60px;
+  padding: 2px;
+  text-align: center;
+  animation: pulseBox 2s ease-in-out infinite;
+}
+
+.time-box p,
+.time-box h3 {
+  margin: 6px 0;
+  font-family: "Fahkwang", sans-serif;
+}
+
+@keyframes pulseBox {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  }
+}
+
+/* ===========================
+   💌 WISHES / UCAPAN SECTION
+=========================== */
+/* Outer container */
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* no extra gap */
+  padding: 0 12px;
+  width: 100%;
+  font-weight: 300;
+  color: #434634;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Section title */
+.message h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 20px 0; /* small space after title */
+  text-align: center;
+}
+
+/* Scrollable wishes list */
+#ucapanList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0; /* no gap between messages */
+  padding: 0 0 10px;
+  padding-bottom: calc(var(--navbar-height) + 16px);
+  height: 400px;
+  width: 100%;
+  overflow-y: auto;
+  box-sizing: border-box;
+
+  /* Hide scrollbar */
+  scrollbar-width: none; /* Firefox */
+}
+#ucapanList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Remove all default margins/paddings inside messages */
+#ucapanList * {
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual messages */
+#ucapanList .ucapan-item {
+  width: 100%;
+  background: none;
+  border: none;
+  box-shadow: none;
+  word-wrap: break-word;
+  white-space: normal;
+  margin-bottom: 15px;
+}
+
+/* Each wish block */
+.ucapan-item {
+  margin-bottom: 20px; /* space between different wishes */
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* optional subtle divider */
+}
+
+/* Message text */
+.ucapan-text {
+  font-style: italic;
+  line-height: 1.4;
+  margin-bottom: 6px; /* space between wish and name */
+}
+
+/* Name / signature */
+.ucapan-nama {
+  font-weight: 400;
+  color: #45556b;
+}
+
+/* Hover effect (optional) */
+.ucapan-item:hover {
+  transform: scale(1.02);
+  background-color: #ffdbe2;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+
+/* ===========================
+   🌸 Bottom Navigation
+=========================== */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 430px;
+  margin: 0 auto;
+  width: 100%;
+  height: var(--navbar-height);
+  background: rgba(255, 254, 248, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease;
+}
+
+.bottom-nav.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navgang {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  gap: clamp(8px, 5%, 40px);
+}
+
+.navgang a.nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navgang a.nav-btn .material-symbols-outlined {
+  font-size: 35px;
+  color: #434634;
+}
+
+.navgang a.nav-btn .label {
+  font-weight: 400;
+  color: #434634;
+  margin-top: 4px;
+}
+
+@media (max-width: 400px) {
+  .bottom-nav {
+    height: 70px;
+  }
+  .navgang a.nav-btn .material-symbols-outlined {
+    font-size: 32px;
+  }
+}
+
+/* ===========================
+   🌸 Calendar Popup
+=========================== */
+
+/* Root variable for navbar height */
+:root {
+  --navbar-height: 80px;
+}
+
+/* Calendar Overlay (hidden by default) */
+.popup.popupcal {
+  display: none; /* Hidden initially */
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  background: transparent; /* fully clear */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Show popup when triggered */
+.popup.popupcal.show {
+  display: flex;
+}
+
+/* Calendar Popup Container */
+.calendarpopup {
+  padding: 20px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: #434634;
+;
+
+  width: 90%;
+  max-width: 368px;
+  height: auto;
+
+  position: fixed;
+  bottom: calc(var(--navbar-height) + 10px); /* above nav */
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.btn-label {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 14px;
+    color: #434634;
+
+}
+
+/* ===========================
+   ✨ Popup Heading Style
+=========================== */
+
+.popup h3#heading {
+  font-family: "Fahkwang", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  position: relative;
+    color: #434634;
+
+}
+
+/* Optional decorative line below heading */
+.popup h3#heading::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  margin: 6px auto 0;
+  border-radius: 2px;
+}
+
+
+/* Paragraph */
+.calendarpopup p {
+  line-height: 1.4;
+  margin-bottom: 15px;
+  font-weight: 280;
+}
+
+/* Buttons container */
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.button-row button {
+  flex: 1 1 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 38px;
+  font-weight: 280;
+}
+
+/* Android Button */
+#androidBtn {
+  border: 1px solid #45556b;
+  border-radius: 9px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #45556b;
+}
+
+/* iOS Button */
+#iosBtn {
+  border: 1px solid #45556b;
+  border-radius: 9px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #45556b;
+}
+
+/* ===========================
+   🌸 CONTACT POPUP
+=========================== */
+
+/* Contact Overlay - hidden by default */
+.popup.popupcon {
+  display: none;
+  position: fixed;
+  inset: 0; /* top, right, bottom, left = 0 */
+  background: transparent;
+  justify-content: center;
+  align-items: flex-end; /* bottom alignment */
+  padding-bottom: calc(var(--navbar-height) + 10px);
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Contact Box */
+.contactpopup {
+  padding: 22px;
+  border-radius: 30px;
+  width: 90%;               /* guna peratusan supaya ikut skrin */
+  max-width: 380px;         /* tak lebih besar dari 380px */
+  height: auto; /* dynamic height */
+  max-height: 80vh; /* prevent overflowing screen */
+  box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Contact Heading */
+.contactpopup h3,
+#heading {
+  font-weight: 400;
+  font-size: 16px;
+  color: #434634;
+  margin: 0;
+  padding: 15px 0 0;
+  text-align: center;
+}
+
+/* Contact Text - aligned left */
+.contactpopup p {
+  font-family: inherit; /* use global font */
+  line-height: 1.4;
+  font-weight: 400;
+  color: #434634;
+  margin: 0; /* remove extra margins */
+  padding: 0 10px; /* optional small horizontal padding */
+  text-align: left; /* align text to left */
+}
+
+/* Special styling for #dua */
+#dua {
+  font-style: italic;
+  color: #434634;
+  margin: 0; /* remove extra margins */
+  padding: 0 10px; /* optional small horizontal padding */
+  text-align: left; /* align text to left */
+  font-weight: 300;
+}
+
+/* Contact Items Layout */
+.contact-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Contact Icons */
+.contact-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.contact-icon {
+  font-size: 34px;
+  color: #434634;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.contact-icon:hover {
+  color: #434634;
+}
+
+/* ===========================
+   🌸 LOCATION POPUP
+=========================== */
+
+/* Location Overlay - hidden by default */
+.popup.popuploc {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-sizing: border-box;
+}
+
+/* Location Box */
+.locationpopup {
+  padding: 10px 20px 20px;
+  border-radius: 19px;
+  text-align: center;
+  box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  max-width: 368px;
+  height: auto;
+  position: fixed;
+  bottom: calc(var(--navbar-height) + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+/* Location Heading */
+.locationpopup h3 {
+  font-weight: 400;
+  font-size: 13px;
+  color: #434634;
+  margin: 10px 0 0;
+}
+
+/* Location Paragraph */
+.locationpopup p {
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #434634;
+  margin: 10px 0 20px;
+}
+
+/* Button Row */
+.buttoned-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.buttoned-row button {
+  flex: 1 1 auto;
+  max-width: calc(50% - 5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  height: 38px;
+  font-weight: 280;
+}
+
+/* Android / iOS Buttons */
+#androidedBtn,
+#iosedBtn {
+  border-radius: 9px;
+  color: #434634;
+  color: #434634;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* QR Link Section */
+.video-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.video-link a {
+  text-decoration: none;
+  color: #45556b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-link img.qr {
+  width: 120px;
+  height: 120px;
+  margin: 20px 0 0;
+  cursor: pointer;
+}
+
+.video-link p {
+  font-size: 16px;
+  font-weight: 400;
+  max-width: 160px;
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+/* === RSVP Popup === */
+:root {
+  --navbar-height: 80px;
+  /* adjust if your nav height changes */
+  --popup-width: 368px;
+  /* standard width for all popups */
+  --popup-height: 180px;
+  /* standard height for all popups */
+}
+
+/* Overlay wrapper */
+.popupRSVP {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 9999;
+  padding-bottom: calc(var(--navbar-height) + 10px);
+}
+
+/* Actual RSVP popup box */
+.rsvppopup {
+  padding: 10px 20px 30px;
+  border-radius: 18px;
+  width: 90%;
+  max-width: var(--popup-width, 368px);
+  /* ✅ fallback */
+  max-height: 300px;
+  /* collapsed height */
+  box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  box-sizing: border-box;
+  transition: max-height 0.4s ease;
+  /* smooth expand */
+  overflow: hidden;
+}
+
+/* Expanded state */
+.rsvppopup.expanded {
+  max-height: 2000vh;
+  /* ✅ Expand upward more */
+  overflow-y: auto;
+  /* scroll if too tall */
+}
+
+/* Title */
+.rsvppopup h3 {
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+  padding-top: 15px;
+  /* ⬅️ shifts everything inside lower */
+}
+
+/* Wrapper for Hadir / Tidak Hadir buttons */
+.hadir-row {
+  display: flex;
+  justify-content: center;
+  /* center both buttons */
+  gap: 10px;
+  /* space between them */
+  margin-top: 30px;
+}
+
+/* General button styles */
+.hadir-row button {
+  flex: 1;
+  /* equal width */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  /* gap between icon and text */
+  padding: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  height: 40px;
+}
+
+/* Hadir button */
+#hadirBtn {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* semi-transparent white */
+  border: 1px solid #434634;
+  color: #434634;
+}
+
+/* Tidak Hadir button */
+#tidakhadirBtn {
+  background-color: rgba(255, 255, 255, 0.8);
+  /* semi-transparent white */
+  border: 1px solid #434634;
+  color: #434634;
+}
+
+/* Hover effects */
+.hadir-row button:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+/* Form (inside expanded popup, no need separate box shadow) */
+#rsvpForm,
+#rsvpFormtidak {
+  display: none;
+  margin-top: 15px;
+  width: 100%;
+  /* ✅ full width inside popup */
+}
+
+#rsvpForm div {
+  margin-bottom: 8px;
+}
+
+#rsvpForm label,
+#rsvpFormtidak label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+#rsvpForm input,
+#rsvpFormtidak input {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  height: 30px;
+}
+
+/* Dropdown styling to match inputs */
+#rsvpForm select,
+#rsvpFormtidak select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  height: 38px;
+  /* slightly taller for dropdown arrow */
+  background-color: #fff;
+  appearance: none;
+  /* remove default browser style */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5'%3E%3Cpath fill='%2345556b' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 10px 5px;
+}
+
+#rsvpForm textarea {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  height: 120px;
+}
+
+#rsvpFormtidak textarea {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  height: 100px;
+}
+
+/* === Form Buttons === */
+#rsvpForm button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#rsvpFormtidak button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+#hantarBtn,
+#hantarBtntidak {
+  background-color: #546b57;
+  color: #fff;
+}
+
+#hantarBtn:hover {
+  background-color: #546b57;
+}
+
+#batalBtn,
+#batalBtntidak {
+  background-color: #ccc;
+  color: #333;
+}
+
+#batalBtn:hover {
+  background-color: #bbb;
+}

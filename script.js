@@ -350,8 +350,7 @@ async function submitRSVP(form, url, rsvpChoice) {
         : "Terima kasih! Kami memahami anda tidak dapat hadir pada majlis.";
       messageDiv.style.backgroundColor = rsvpChoice === "Hadir" ? "#e7f1f8" : "#ffdd57";
       messageDiv.style.color = rsvpChoice === "Hadir" ? "#000" : "#363636";
-      form.reset(); transparent bg
-
+      form.reset();
 
        // ✅ Auto-close the popup after 2 seconds
   setTimeout(() => {

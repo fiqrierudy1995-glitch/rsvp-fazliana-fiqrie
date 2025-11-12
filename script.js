@@ -326,6 +326,7 @@ async function submitRSVP(form, url, rsvpChoice) {
   
   messageDiv.textContent = "Menghantar...";
   messageDiv.style.display = "block";
+  messageDiv.style.backgroundColor = "beige";
   messageDiv.style.color = "black";
   hantarBtn.disabled = true;
 

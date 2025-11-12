@@ -59,7 +59,6 @@ h2 {
   margin: 8px 0;
 }
 
-
 /* Prevent horizontal scroll */
 .mobile-frame,
 .scroll-container,
@@ -77,9 +76,11 @@ h2 {
   top: 0;
   width: 50%;
   height: 100%;
-  background: linear-gradient(to bottom,
+  background: linear-gradient(
+    to bottom,
     rgba(255, 255, 255, 0.98) 0%,
-    rgba(255, 255, 255, 0.99) 100%);
+    rgba(255, 255, 255, 0.99) 100%
+  );
   transform-style: preserve-3d;
   transition: all 4s ease-in-out;
   z-index: 2000;
@@ -115,7 +116,7 @@ h2 {
 .logo {
   width: 200px;
   height: 200px;
-  background: url('https://i.ibb.co/602srx0L/f-200-x-200-px-3.png') no-repeat center / contain;
+  background: url("images/logo.png") no-repeat center / contain;
   position: absolute;
   top: 50%;
   right: -100px;
@@ -126,8 +127,13 @@ h2 {
 }
 
 @keyframes pulseZoom {
-  0%, 100% { transform: translateY(-50%) scale(1); }
-  50% { transform: translateY(-50%) scale(1.05); }
+  0%,
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.05);
+  }
 }
 
 /* ===========================
@@ -149,16 +155,29 @@ h2 {
 }
 
 @keyframes fall {
-  to { transform: translateY(900px); }
+  to {
+    transform: translateY(900px);
+  }
 }
 @keyframes drift {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(30px); }
-  100% { transform: translateX(-30px); }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+  100% {
+    transform: translateX(-30px);
+  }
 }
 @keyframes twinkle {
-  0%, 100% { opacity: 0.9; }
-  50% { opacity: 0.4; }
+  0%,
+  100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.4;
+  }
 }
 
 /* ===========================
@@ -171,7 +190,6 @@ h2 {
   margin: 0 auto;
   position: relative;
   overflow: hidden;
-  
 }
 
 /* Scrollable Container */
@@ -185,11 +203,11 @@ h2 {
   padding-bottom: 300px;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  background-image: url('images/bg.png');
-  background-size: contain;   /* make sure image fits */
+  background-image: url("images/bg.png");
+  background-size: contain; /* make sure image fits */
   background-repeat: no-repeat;
   background-position: top center;
-  }
+}
 
 .scroll-container::-webkit-scrollbar {
   display: none;
@@ -220,8 +238,7 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
-  
+  padding-top: 0px;
 }
 
 .arabic-text {
@@ -229,11 +246,10 @@ h2 {
   font-size: 36px;
   font-weight: 300;
   color: #434634;
-  margin: 25px 0 13px;
+  margin: 20px 0 13px;
   text-align: center;
   transform: scaleX(1.3);
 }
-
 
 .parents-group {
   text-align: center;
@@ -244,15 +260,13 @@ h2 {
 .parent3-text {
   margin: 0;
   font-weight: 400;
-    font-size: 16px;
-
+  font-size: 16px;
 }
 
 .parent2-text {
   margin: 2px 0;
   font-weight: 400;
-    font-size: 16px;
-
+  font-size: 16px;
 }
 
 .aluan-text {
@@ -316,8 +330,7 @@ h2 {
   text-align: center;
   font-weight: 400;
   margin-bottom: 0;
-    font-size: 16px;
-
+  font-size: 16px;
 }
 
 .tempat1-text,
@@ -325,15 +338,13 @@ h2 {
 .hour1-text {
   text-align: center;
   margin: 0 0 4px;
-    color: #555;
-
+  color: #555;
 }
 
 .ballroom-name {
   font-weight: 400;
   line-height: 1.2;
 }
-
 
 /* ===========================
    🌸 PAGE 3 - PROGRAMME
@@ -430,20 +441,19 @@ h2 {
   .box-text h4 {
     font-size: 14px;
   }
-
 }
 /* ===========================
    🤲 PRAYER SECTION
 =========================== */
 .doa-box {
-  max-width: 800px;     /* tetapkan lebar maksimum */
-  margin: 0 auto;       /* center-kan kotak di tengah skrin */
-  padding-left: 40px;   /* ruang kiri */
-  padding-right: 40px;  /* ruang kanan */
+  max-width: 800px; /* tetapkan lebar maksimum */
+  margin: 0 auto; /* center-kan kotak di tengah skrin */
+  padding-left: 40px; /* ruang kiri */
+  padding-right: 40px; /* ruang kanan */
 }
 
 .doa-text {
-  text-align: center;       /* semua teks center secara horizontal */
+  text-align: center; /* semua teks center secara horizontal */
 }
 
 .doa-text h3 {
@@ -454,14 +464,13 @@ h2 {
 }
 
 .doa-text p {
-  text-align: center;      /* justifikasi teks */
+  text-align: center; /* justifikasi teks */
   text-justify: inter-word;
   line-height: 1.6;
-  margin: 0 auto;           /* center-kan block dengan max-width */
+  margin: 0 auto; /* center-kan block dengan max-width */
   max-width: 600px;
   font-size: 14px;
-    color: #555;
-
+  color: #555;
 }
 
 /* ===========================
@@ -508,7 +517,8 @@ h2 {
 }
 
 @keyframes pulseBox {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   }
@@ -605,7 +615,6 @@ h2 {
   background-color: #ffdbe2;
   transition: transform 0.2s, background-color 0.2s;
 }
-
 
 /* ===========================
    🌸 Bottom Navigation
@@ -704,8 +713,6 @@ h2 {
   box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
   background-color: rgba(255, 255, 255, 0.8);
   border-color: #434634;
-;
-
   width: 90%;
   max-width: 368px;
   height: auto;
@@ -721,8 +728,7 @@ h2 {
 .btn-label {
   font-family: "Fahkwang", sans-serif;
   font-size: 14px;
-    color: #434634;
-
+  color: #434634;
 }
 
 /* ===========================
@@ -737,8 +743,7 @@ h2 {
   letter-spacing: 0.5px;
   margin-bottom: 6px;
   position: relative;
-    color: #434634;
-
+  color: #434634;
 }
 
 /* Optional decorative line below heading */
@@ -750,7 +755,6 @@ h2 {
   margin: 6px auto 0;
   border-radius: 2px;
 }
-
 
 /* Paragraph */
 .calendarpopup p {
@@ -820,8 +824,8 @@ h2 {
 .contactpopup {
   padding: 22px;
   border-radius: 30px;
-  width: 90%;               /* guna peratusan supaya ikut skrin */
-  max-width: 380px;         /* tak lebih besar dari 380px */
+  width: 90%; /* guna peratusan supaya ikut skrin */
+  max-width: 380px; /* tak lebih besar dari 380px */
   height: auto; /* dynamic height */
   max-height: 80vh; /* prevent overflowing screen */
   box-shadow: 5px 5px 15px rgba(47, 68, 88, 0.3);
@@ -936,7 +940,7 @@ h2 {
 /* Location Paragraph */
 .locationpopup p {
   font-weight: 200;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.2;
   color: #434634;
   margin: 10px 0 20px;
@@ -1095,6 +1099,7 @@ h2 {
   /* semi-transparent white */
   border: 1px solid #434634;
   color: #434634;
+  font-size: 16px;
 }
 
 /* Tidak Hadir button */
@@ -1103,6 +1108,7 @@ h2 {
   /* semi-transparent white */
   border: 1px solid #434634;
   color: #434634;
+  font-size: 16px;
 }
 
 /* Hover effects */

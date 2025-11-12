@@ -344,13 +344,26 @@ async function submitRSVP(form, url, rsvpChoice) {
     });
 
     const data = await response.json();
-    if (data.status === "success") {
-      messageDiv.textContent = rsvpChoice === "Hadir"
-        ? "Terima kasih! Kehadiran anda telah disahkan."
-        : "Terima kasih! Kami memahami anda tidak dapat hadir pada majlis.";
-      messageDiv.style.backgroundColor = rsvpChoice === "Hadir" ? "#e7f1f8" : "#ffdd57";
-      messageDiv.style.color = rsvpChoice === "Hadir" ? "#000" : "#363636";
-      form.reset();
+if (data.status === "success") {
+  messageDiv.textContent = rsvpChoice === "Hadir"
+    ? "Terima kasih! Kehadiran anda telah disahkan."
+    : "Terima kasih! Kami memahami anda tidak dapat hadir pada majlis.";
+
+  // Make background transparent
+  messageDiv.style.backgroundColor = "transparent";
+
+  // Keep text color if you want
+  messageDiv.style.color = rsvpChoice === "Hadir" ? "#000" : "#363636";
+
+  form.reset();
+
+  // Auto-close the popup after 2 seconds
+  setTimeout(() => {
+    popupRSVP.style.display = "none";
+    resetRSVP();
+  }, 2000);
+}
+
 
        // ✅ Auto-close the popup after 2 seconds
   setTimeout(() => {
